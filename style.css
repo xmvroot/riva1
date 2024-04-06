@@ -1,0 +1,172 @@
+/* This style will apply to all browsers */
+.element {
+    padding: 10px;
+}
+
+.element {
+    height: 100vh; /* Fallback for browsers that do not support environment variables */
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+#logo {
+    height: 50px; /* Adjust the height as needed; the width will scale proportionally */
+    margin-right: 15px; /* Space between the logo and the title or other content */
+    vertical-align: middle; /* Aligns the logo with the middle of adjacent inline or inline-block elements */
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Centers items vertically within the header */
+    justify-content: start; /* Aligns items to the start of the header container */
+    /* ... other styling for your header ... */
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.search-container {
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 17px;
+    border: 1px solid #ddd;
+}
+
+.directory-container {
+    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    background-color: #e7e4e4;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.directory-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .directory-container {
+        width: 100%;
+    }
+
+    table.directory, th, td {
+        font-size: 14px;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+table.directory {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table.directory, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 600px) {
+    th, td {
+        display: block;
+        width: 100%;
+    }
+    th {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        margin-bottom: 10px;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+    }
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+    }
+    @media (max-width: 768px) {
+        /* Hide table headers */
+        .directory thead tr {
+            display: none;
+        }
+    
+        /* Make table rows display as blocks and adjust margin, padding, and borders */
+        .directory tbody tr {
+            display: block;
+            margin-bottom: 15px; /* Increased space between cards */
+            padding: 10px; /* Add padding for visual space around the content */
+            border: none; /* Remove borders or adjust as needed */
+            background-color: #fff; /* Set background to white or another light color */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: add a subtle shadow for depth */
+        }
+    
+        /* Make table cells display as blocks and adjust text alignment */
+        .directory tbody tr td {
+            display: block;
+            text-align: left; /* Adjust text alignment as needed */
+            font-size: 14px; /* Adjust font size as needed */
+            border-bottom: 1px solid #ececec; /* Style the separator line */
+            position: relative;
+            padding: 8px 0; /* Adjust padding for each cell */
+            padding-left: 35%; /* Increase left padding to ensure space for labels */
+        }
+    
+        /* Adjust the pseudo-element for labels */
+        .directory td:before {
+            content: attr(data-label);
+            position: absolute;
+            left: 10px; /* Adjust left position based on padding */
+            width: 25%; /* Adjust width for label if necessary */
+            padding-right: 10px; /* Adjust right padding */
+            font-weight: normal; /* Adjust font weight as needed */
+            color: #666; /* Adjust label text color */
+            text-transform: uppercase; /* Optional: style for labels */
+            font-size: 12px; /* Adjust label font size */
+            white-space: nowrap; /* Prevent label text from wrapping */
+            overflow: hidden; /* Prevent label text from overflowing */
+            text-overflow: ellipsis; /* Add ellipsis to overflowing label text */
+        }
+    }
+    
+    
+    
+}
